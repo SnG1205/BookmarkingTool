@@ -193,6 +193,35 @@ public class BookmarkingToolTest {
     }
 
 
+    @Test
+    public void ensureSortByRatingWorksCorrectly(){
+        String URL1 = "https://github.com";
+        String URL2 = "https://facebook.com";
+        String URL3 = "http://test.com";
+
+        BookmarkingTool bt = new BookmarkingTool();
+        Bookmark bm1 = new Bookmark(URL1);
+        Bookmark bm2 = new Bookmark(URL2);
+        Bookmark bm3 = new Bookmark(URL3);
+        for(int i=0; i < 3; i++){
+            bt.addBookmark(bm1);
+        }
+        for(int i=0; i < 4; i++){
+            bt.addBookmark(bm2);
+        }
+        for(int i=0; i < 5; i++){
+            bt.addBookmark(bm3);
+        }
+
+        List<Bookmark> expected= new ArrayList<>();
+        expected.add(bm3);
+        expected.add(bm2);
+        expected.add(bm1);
+
+        bt.filterByRating();
+
+        assertEquals(bt.allBookmarks, expected);
+    }
 
 
 

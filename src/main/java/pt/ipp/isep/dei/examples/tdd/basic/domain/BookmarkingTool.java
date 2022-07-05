@@ -1,14 +1,9 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
-import java.awt.print.Book;
-import java.io.*;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.validator.routines.*;
-import org.apache.commons.io.*;
 
 
 /**
@@ -18,7 +13,7 @@ import org.apache.commons.io.*;
  */
 public class BookmarkingTool {
 
-    List<Bookmark> allBookmarks = new ArrayList<>();
+    public List<Bookmark> allBookmarks = new ArrayList<>();
 
 
     public BookmarkingTool() {
@@ -102,8 +97,18 @@ public class BookmarkingTool {
         }
     }
 
+    public   void filterByRating(){
+
+        allBookmarks.sort((bk1, bk2) -> bk2.getRating() - bk1.getRating());
+    }
 
 
+    @Override
+    public String toString() {
+        return "BookmarkingTool{" +
+                "allBookmarks=" + allBookmarks +
+                '}';
+    }
 
 
 

@@ -55,4 +55,9 @@ public class Bookmark {
     public String getDate() {
         return this.date;
     }
+
+    @Override
+    public String toString() {
+        return "URL='" + URL + '\'' ;
+    }
 }

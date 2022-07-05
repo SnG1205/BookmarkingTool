@@ -23,7 +23,7 @@ User Story 9: As a user I want to remove a URL bookmark
 
 User Story 10: As a user I want to add a current date/time when I add a bookmark
 
-
+User Story 11: As a user I want to list my bookmarks sorted by rating (highest to smallest)
 
 
 ## Bookmark URL
@@ -55,3 +55,11 @@ User Story 10: As a user I want to add a current date/time when I add a bookmark
 - Read from file line by line, if URL contains the keyword.
 - Add this URL to a List.
 - Return List.
+
+## Filtering Bookmarks by Rating
+- Take list of bookmarks
+- Sort each mark comparing the rating
+- Bookmark with higher rating should appear first on the list
+- Return List.
+
+
