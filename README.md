@@ -62,4 +62,8 @@ User Story 11: As a user I want to list my bookmarks sorted by rating (highest t
 - Bookmark with higher rating should appear first on the list
 - Return List.
 
-
+## Filtering Bookmarks by Date
+- Take list of bookmarks
+- Sort each mark comparing the date
+- Bookmark with newer date should appear first on the list
+- Return List.

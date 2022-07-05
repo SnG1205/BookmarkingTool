@@ -97,11 +97,14 @@ public class BookmarkingTool {
         }
     }
 
-    public   void filterByRating(){
+    public void filterByRating(){
 
         allBookmarks.sort((bk1, bk2) -> bk2.getRating() - bk1.getRating());
     }
 
+    public void filterByDate(){
+        allBookmarks.sort((bk1, bk2) -> bk2.getDate().compareTo(bk1.getDate()));
+    }
 
     @Override
     public String toString() {

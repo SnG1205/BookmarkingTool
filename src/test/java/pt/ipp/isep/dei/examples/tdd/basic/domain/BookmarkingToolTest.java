@@ -223,6 +223,37 @@ public class BookmarkingToolTest {
         assertEquals(bt.allBookmarks, expected);
     }
 
+    @Test
+    public void ensureSortByDateWorksCorrectly() throws InterruptedException {
+        String URL1 = "https://github.com";
+        String URL2 = "https://facebook.com";
+        String URL3 = "http://test.com";
+
+        BookmarkingTool bt = new BookmarkingTool();
+        Bookmark bm1 = new Bookmark(URL1);
+        Thread.sleep(1000);
+
+        Bookmark bm2 = new Bookmark(URL2);
+        Thread.sleep(1000);
+
+        Bookmark bm3 = new Bookmark(URL3);
+
+        bt.addBookmark(bm1);
+        bt.addBookmark(bm2);
+        bt.addBookmark(bm3);
+
+        //Thread.sleep was added to make sure that URLs are added at different times. Without it that results in the same date.
+
+        List<Bookmark> expected= new ArrayList<>();
+        expected.add(bm3);
+        expected.add(bm2);
+        expected.add(bm1);
+
+        bt.filterByDate();
+
+        assertEquals(bt.allBookmarks, expected);
+    }
+
 
 
 

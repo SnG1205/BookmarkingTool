@@ -9,9 +9,11 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Bookmark bm = new Bookmark("https://facebook.com");
+        Thread.sleep(1000);
         Bookmark bm1 = new Bookmark("https://www.techiedelight.com/sort-list-of-objects-using-comparator-java/");
+        Thread.sleep(1000);
         Bookmark bm2 = new Bookmark("https://www.hltv.org/matches");
         BookmarkingTool bt = new BookmarkingTool();
         bt.addBookmark(bm);
@@ -33,7 +35,15 @@ public class Main {
         for(Bookmark bookmark: bt.allBookmarks){
             System.out.println(bookmark.toString());
         }
-        System.out.println(bm.getDate());
+
+        bt.filterByDate();
+        for(Bookmark bookmark: bt.allBookmarks){
+            System.out.println(bookmark.toString());
+        }
+
+        for(Bookmark bookmark: bt.allBookmarks){
+            System.out.println(bookmark.getDate());
+        }
 
     }
 }
