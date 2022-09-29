@@ -16,6 +16,7 @@ public class BookmarkingTool {
 
     public List<Bookmark> allBookmarks = new ArrayList<>();
 
+    public List<Bookmark> restoredBookmarks = new ArrayList<>();
 
     public BookmarkingTool() {
     }
@@ -123,6 +124,17 @@ public class BookmarkingTool {
         objectOutputStream.writeObject(allBookmarks);
         objectOutputStream.close();
         fileOutputStream.close();
+    }
+
+    public void restoreBookmarks() throws IOException, ClassNotFoundException {
+
+        FileInputStream fileInputStream
+                = new FileInputStream("yourfile.txt");
+        ObjectInputStream objectInputStream
+                = new ObjectInputStream(fileInputStream);
+        restoredBookmarks=(List<Bookmark>) objectInputStream.readObject();
+        objectInputStream.close();
+        fileInputStream.close();
     }
 
     @Override

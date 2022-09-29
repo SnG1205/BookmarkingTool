@@ -77,3 +77,7 @@ User Story 14: As a user, I want to backup my bookmark collection to a file.
 - Take list of bookmarks
 - Create a file to store list in.
 - Serialize list into the file.
+
+## Restoring Bookmarks
+- Call Deserialization on a file that contains stored bookmarks.
+- Assign this object to created variable.

@@ -276,9 +276,39 @@ public class BookmarkingToolTest {
             assertTrue(false);
         }
 
+
+
     }
 
 
+    @Test
+    public void ensureDeserializationWorksProperly() {
+        String URL1 = "https://github.com";
+        String URL2 = "https://facebook.com";
+        String URL3 = "http://test.com";
+        boolean equals = false;
+
+        BookmarkingTool bt = new BookmarkingTool();
+        Bookmark bm1 = new Bookmark(URL1);
+        Bookmark bm2 = new Bookmark(URL2);
+        Bookmark bm3 = new Bookmark(URL3);
+
+        bt.addBookmark(bm1);
+        bt.addBookmark(bm2);
+        bt.addBookmark(bm3);
+
+        try {
+            bt.restoreBookmarks();
+            assertTrue(true);
+        }
+        catch (IOException e){
+            assertTrue(false);
+        }
+        catch (ClassNotFoundException e){
+            assertTrue(false);
+        }
+
+    }
 
 
 

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Bookmark  {
+public class Bookmark implements Serializable {
 
     private String URL;
     private String tag;

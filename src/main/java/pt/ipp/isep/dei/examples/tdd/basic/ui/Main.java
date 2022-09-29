@@ -49,14 +49,10 @@ public class Main {
 
         bt.saveBookmarks();
 
-        FileInputStream fileInputStream
-                = new FileInputStream("yourfile.txt");
-        ObjectInputStream objectInputStream
-                = new ObjectInputStream(fileInputStream);
-        bt.allBookmarks = (List<Bookmark>) objectInputStream.readObject();
-        objectInputStream.close();
 
-        for(Bookmark bookmark: bt.allBookmarks){
+        System.out.println("Deserialization in progress..");
+        bt.restoreBookmarks();
+        for(Bookmark bookmark: bt.restoredBookmarks){
             System.out.println(bookmark.toString());
         }
     }
