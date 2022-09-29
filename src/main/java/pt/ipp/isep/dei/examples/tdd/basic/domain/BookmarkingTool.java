@@ -114,20 +114,37 @@ public class BookmarkingTool {
         fileToCreate.createNewFile();
 
 
-        FileOutputStream fileOutputStream
-                = new FileOutputStream("yourfile.txt");
-        ObjectOutputStream objectOutputStream
-                = new ObjectOutputStream(fileOutputStream);
-        objectOutputStream.writeObject(allBookmarks);
+        try(FileOutputStream fileOutputStream
+                    = new FileOutputStream("yourfile.txt")) {
+            try(ObjectOutputStream objectOutputStream
+                        = new ObjectOutputStream(fileOutputStream)){
+                objectOutputStream.writeObject(allBookmarks);
+            }catch (IOException e){
+
+            }
+        }
+        catch (IOException e){
+
+        }
+
     }
 
-    public void restoreBookmarks() throws IOException, ClassNotFoundException {
+    public void restoreBookmarks() throws IOException {
+        //FileInputStream fileInputStream = null;
+        //ObjectInputStream objectInputStream = null;
+        try(FileInputStream fileInputStream
+                    = new FileInputStream("yourfile.txt")) {
+            try(ObjectInputStream objectInputStream
+                    = new ObjectInputStream(fileInputStream)){
+                restoredBookmarks=(List<Bookmark>) objectInputStream.readObject();
+            }catch (IOException e){
 
-        FileInputStream fileInputStream
-                = new FileInputStream("yourfile.txt");
-        ObjectInputStream objectInputStream
-                = new ObjectInputStream(fileInputStream);
-        restoredBookmarks=(List<Bookmark>) objectInputStream.readObject();
+            }
+        }
+        catch (IOException | ClassNotFoundException e){
+
+        }
+
 
     }
 

@@ -29,7 +29,7 @@
         <!-- Pitest Configuration-->
         <pitest.version>1.8.0</pitest.version>
         <pitest.junit5.version>0.15</pitest.junit5.version>
-        <junit.platform.surefire.provider>1.3.2</junit.platform.surefire.provider>
+        <junit.platform.surefire.provider>1.3.2 </junit.platform.surefire.provider>
 
 
 

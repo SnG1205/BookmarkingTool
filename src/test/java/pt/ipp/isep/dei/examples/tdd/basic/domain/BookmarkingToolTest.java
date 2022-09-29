@@ -304,9 +304,6 @@ public class BookmarkingToolTest {
         catch (IOException e){
             assertTrue(false);
         }
-        catch (ClassNotFoundException e){
-            assertTrue(false);
-        }
 
     }
 
