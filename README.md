@@ -25,6 +25,11 @@ User Story 10: As a user I want to add a current date/time when I add a bookmark
 
 User Story 11: As a user I want to list my bookmarks sorted by rating (highest to smallest)
 
+User Story 12: As a user I want to list my bookmarks sorted by date (newer to older)
+
+User Story 13: ToDo
+
+User Story 14: As a user, I want to backup my bookmark collection to a file.
 
 ## Bookmark URL
 
@@ -67,3 +72,8 @@ User Story 11: As a user I want to list my bookmarks sorted by rating (highest t
 - Sort each mark comparing the date
 - Bookmark with newer date should appear first on the list
 - Return List.
+
+## Saving Bookmarks
+- Take list of bookmarks
+- Create a file to store list in.
+- Serialize list into the file.

@@ -1,9 +1,10 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Bookmark {
+public class Bookmark  {
 
     private String URL;
     private String tag;

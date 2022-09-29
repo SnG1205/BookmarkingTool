@@ -1,5 +1,6 @@
 package pt.ipp.isep.dei.examples.tdd.basic.domain;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,6 +105,24 @@ public class BookmarkingTool {
 
     public void filterByDate(){
         allBookmarks.sort((bk1, bk2) -> bk2.getDate().compareTo(bk1.getDate()));
+    }
+
+    public void saveBookmarks() throws IOException {
+        File fileToCreate = new File("yourfile.txt");
+        if (fileToCreate.createNewFile()) {
+            //TODO delete the following line
+            System.out.println("File created: ");
+        } else {
+            //TODO delete the following line
+            System.out.println("File already exists.");
+        }
+        FileOutputStream fileOutputStream
+                = new FileOutputStream("yourfile.txt");
+        ObjectOutputStream objectOutputStream
+                = new ObjectOutputStream(fileOutputStream);
+        objectOutputStream.writeObject(allBookmarks);
+        objectOutputStream.close();
+        fileOutputStream.close();
     }
 
     @Override

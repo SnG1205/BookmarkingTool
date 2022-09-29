@@ -254,6 +254,29 @@ public class BookmarkingToolTest {
         assertEquals(bt.allBookmarks, expected);
     }
 
+    @Test
+    public void ensureSerializationWorksProperly()   {
+        String URL1 = "https://github.com";
+        String URL2 = "https://facebook.com";
+        String URL3 = "http://test.com";
+
+        BookmarkingTool bt = new BookmarkingTool();
+        Bookmark bm1 = new Bookmark(URL1);
+        Bookmark bm2 = new Bookmark(URL2);
+        Bookmark bm3 = new Bookmark(URL3);
+
+        bt.addBookmark(bm1);
+        bt.addBookmark(bm2);
+        bt.addBookmark(bm3);
+
+        try {
+            bt.saveBookmarks();
+            assertTrue(true);
+        } catch (IOException e){
+            assertTrue(false);
+        }
+
+    }
 
 
 
