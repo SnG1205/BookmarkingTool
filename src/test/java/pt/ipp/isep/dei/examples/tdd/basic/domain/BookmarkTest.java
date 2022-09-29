@@ -45,4 +45,19 @@ class BookmarkTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void ensureToStringIsCorrect(){
+        String URL = "https://github.com";
+
+        Bookmark bm = new Bookmark(URL);
+
+        String expected = "URL='https://github.com'";
+
+        assertEquals(expected, bm.toString());
+
+
+
+
+    }
 }

@@ -110,20 +110,15 @@ public class BookmarkingTool {
 
     public void saveBookmarks() throws IOException {
         File fileToCreate = new File("yourfile.txt");
-        if (fileToCreate.createNewFile()) {
-            //TODO delete the following line
-            System.out.println("File created: ");
-        } else {
-            //TODO delete the following line
-            System.out.println("File already exists.");
-        }
+
+        fileToCreate.createNewFile();
+
+
         FileOutputStream fileOutputStream
                 = new FileOutputStream("yourfile.txt");
         ObjectOutputStream objectOutputStream
                 = new ObjectOutputStream(fileOutputStream);
         objectOutputStream.writeObject(allBookmarks);
-        objectOutputStream.close();
-        fileOutputStream.close();
     }
 
     public void restoreBookmarks() throws IOException, ClassNotFoundException {
@@ -133,16 +128,10 @@ public class BookmarkingTool {
         ObjectInputStream objectInputStream
                 = new ObjectInputStream(fileInputStream);
         restoredBookmarks=(List<Bookmark>) objectInputStream.readObject();
-        objectInputStream.close();
-        fileInputStream.close();
+
     }
 
-    @Override
-    public String toString() {
-        return "BookmarkingTool{" +
-                "allBookmarks=" + allBookmarks +
-                '}';
-    }
+
 
 
 
