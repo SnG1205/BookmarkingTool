@@ -119,8 +119,6 @@ public class BookmarkingTool {
             try(ObjectOutputStream objectOutputStream
                         = new ObjectOutputStream(fileOutputStream)){
                 objectOutputStream.writeObject(allBookmarks);
-            }catch (IOException e){
-
             }
         }
         catch (IOException e){
@@ -137,8 +135,6 @@ public class BookmarkingTool {
             try(ObjectInputStream objectInputStream
                     = new ObjectInputStream(fileInputStream)){
                 restoredBookmarks=(List<Bookmark>) objectInputStream.readObject();
-            }catch (IOException e){
-
             }
         }
         catch (IOException | ClassNotFoundException e){
