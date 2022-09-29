@@ -301,7 +301,7 @@ public class BookmarkingToolTest {
             bt.restoreBookmarks();
             assertTrue(true);
         }
-        catch (IOException e){
+        catch (IOException | ClassNotFoundException e){
             assertTrue(false);
         }
 

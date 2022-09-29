@@ -121,13 +121,11 @@ public class BookmarkingTool {
                 objectOutputStream.writeObject(allBookmarks);
             }
         }
-        catch (IOException e){
 
-        }
 
     }
 
-    public void restoreBookmarks() throws IOException {
+    public void restoreBookmarks() throws IOException, ClassNotFoundException {
         //FileInputStream fileInputStream = null;
         //ObjectInputStream objectInputStream = null;
         try(FileInputStream fileInputStream
@@ -137,9 +135,7 @@ public class BookmarkingTool {
                 restoredBookmarks=(List<Bookmark>) objectInputStream.readObject();
             }
         }
-        catch (IOException | ClassNotFoundException e){
 
-        }
 
 
     }

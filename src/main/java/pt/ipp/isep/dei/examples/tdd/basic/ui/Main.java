@@ -12,7 +12,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) throws InterruptedException, IOException, ClassNotFoundException {
-        Bookmark bm = new Bookmark("https://facebook.com");
+       /* Bookmark bm = new Bookmark("https://facebook.com");
         Thread.sleep(1000);
         Bookmark bm1 = new Bookmark("https://www.techiedelight.com/sort-list-of-objects-using-comparator-java/");
         Thread.sleep(1000);
@@ -45,7 +45,7 @@ public class Main {
 
         /*for(Bookmark bookmark: bt.allBookmarks){
             System.out.println(bookmark.getDate());
-        }*/
+        }
 
         bt.saveBookmarks();
 
@@ -54,7 +54,7 @@ public class Main {
         bt.restoreBookmarks();
         for(Bookmark bookmark: bt.restoredBookmarks){
             System.out.println(bookmark.toString());
-        }
+        } */
     }
 
 }
